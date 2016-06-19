@@ -1,0 +1,69 @@
+
+static ip
+
+vncserver aber besser:
+x11vnc ... damit HDMI Ausgang gespiegelt werden kann.
+	Install & autostart
+	ACHTUNG: zur Zeit OHNE Passwort
+
+
+apache2 .. Install
+
+php5 ....Install
+	set the directive short_open_tag = On in your php.ini (the recommended way);
+
+
+FHEM  ... via Add/Remove Software im Startmenu - Einstellungen
+	?? wie Componenten (HomeMatic) 
+	?? wie Homematic NetAdapter
+	RECOVER /opt/fhem/fhem.cfg
+
+
+
+//Python Autostart: 
+//	/media/pi/root/etc/xdg/lxsession/LXDE/autostart:/
+//		@sudo /usr/bin/python /home/pi/homeputer_HomematicOnly/systemStartup.py
+// siehe autostart weiter unten
+
+GoogleCal
+	aktivieren der Google Calender API
+		download client_secrets.json (google quickstart Python Google Calender API)
+
+
+Adjust path for www folder
+	settings
+	logfile
+
+www
+	FHZ_base.php - set correct server ip
+
+
+HERE THE REMOTE VIA WEB BROWSER SHOULD WORK !!!! (manually turn on lights, rollos up/down)
+
+
+Autostart:
+	/home/pi/.config/autostart
+	eHome.desktop:
+[Desktop Entry]
+Type=Application
+Name=eHome
+Exec=sudo /usr/bin/python /home/pi/eHome/homeputer_HomematicOnly/systemStartup.py
+StartupNotify=false
+
+
+	X11VNC.desktop
+[Desktop Entry]
+Type=Application
+Name=X11VNC
+Exec=x11vnc -forever -usepw
+StartupNotify=false
+
+
+eHome mit Siri:
+install nodejs
+install npm
+install homebridge
+install python-shell (for nodjs)
+
+install Geany !!!! super IDE for Raspi
+
