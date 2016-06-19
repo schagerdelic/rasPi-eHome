@@ -1,0 +1,22 @@
+
+   
+   
+stabilisieren - ???
+   vielleicht über ein keep alive 
+      funktion die alle 3 sek aufgerufen wird
+      
+      
+homebridge autostart in Terminal ausführen - leichter zum debuggen 
+
+
+
+
+
+DONE - DONE - DONE - DONE -DONE - DONE
+
+schnelle ausführung von makros	- DONE via nodejs Mutex Lock (siehe eHome.js)
+   fast parallel 
+   eventuell über ein globales interface zu py
+   vielleicht mit python-shell send interface un einem globalen objekt
+
+HMThermostat umgestellt auf Filezugriff statt FHEM telnet protokoll - DONE

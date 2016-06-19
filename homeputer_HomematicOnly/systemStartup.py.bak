@@ -1,0 +1,19 @@
+
+import subprocess
+import time
+
+
+PROP_BELOW_NORMAL = 0x00004000
+PRIO_IDLE = 0x00000040
+
+time.sleep(60)
+p1 = subprocess.Popen('"C:\\Program Files\\homeputer Standard\\homeputerStandard.exe"')
+time.sleep(60)
+p2 = subprocess.Popen('"C:\\Python24\\python.exe" "C:\\Users\\eHome\\Documents\\homeputer\\myFHZServer.py"')
+time.sleep(5)
+p3 = subprocess.Popen('"C:\\Python24\\python.exe" "C:\\Users\\eHome\\Documents\\homeputer\\Monitoring\\monitoring.py"')
+time.sleep(5)
+p4 = subprocess.Popen('"C:\\Users\\eHome\\Documents\\homeputer\\bewegungsMeldung\\facedetect32.exe" "-1" "200" "80" "60" "40" "60000" "0" "2" "0"')
+time.sleep(5)
+p5 = subprocess.Popen('"C:\\XBMC911\\XBMC.exe" "-p"', creationflags = PRIO_IDLE)
+

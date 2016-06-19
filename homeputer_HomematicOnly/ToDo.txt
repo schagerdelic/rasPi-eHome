@@ -1,0 +1,143 @@
+2. reboot on client connection lost
+
+1. Q-Laufwerk im Autostart mounten nach Windows restart 
+	explorer geöffnet warten obs funkt - dann noch einen befehl finden zum schliessen vom explorer
+
+
+
+1. try-catch nur für einzelne blöcke -999 => kein Serverstart
+
+1. try catch für abgeschmierten Homputer???
+	
+1. Erstes laden der Einstellungen (Load Model, Save umbenennnen)
+
+
+2. Bei Solltemperatur eingabe punkt und komma abfangen
+
+
+2. wenn settings online == false bricht das ganze monitoring ab 
+
+
+2. python bluetooth - nur abfragen wenn bluetooth in settings aktiviert ist
+	- Sonnenschutz nur wenn niemand zu Hause ist
+	- rollos Wohnen nur schliessen wenn keiner zuhause ist!!
+	- rollos schliessen und licht an wenn jemand zuhause ist
+
+
+3. hoch/ quer unterstuetzung
+
+3. Bewässerung zerlegen und ansteuern
+
+3. Warning-dialog für Alarme
+3. Plexiglas Ständer bauen
+3. Wetter und Überwachung aufteilen auf zwei Seiten
+
+
+
+===========================================
+eHome v1
+OK - FS20 Repeater für Schalfzimmer kaufen
+OK - Webserver auf neuen laptop umbiegen!
+OK - Python script connect to running instance of homeputer
+OK - Rollos zu im Wohnbereich Screen wird von anderem Control überlagert
+OK - scheint gelöst - background script mit XBMC beenden (task bleibt sonst immer hängen)
+OK - sonnenschutz immer aktiv -> beheben!
+OK - Wochenendsteuerung für Rollos
+OK - iRise plexiglas ständer für iPad
+OK - Audios aufzeichnen
+OK - Audios + Messages von homeputer auf python im XBMC umbauen (werden nicht dauernd wiederholt)
+OK - Autostart vom kompleten System nach reboot
+OK - myLAuncher für: Oper, Skype, Dora
+OK - Dual Network Connection problem lösen! - eventuell stick und internes tauschen - scheint besser sein
+
+NOK - Settings aus dem Script aufrufbar (geht anscheinend nicht)
+OK - NICHT MEHR BENÖTIGT - Bessere Gestensteuerung für XBMC
+
+
+OK - durch REDESIGN auf eHome v2 - CPU load reduzieren (black screen saver)
+	- XBMC System - System - Video Hardware 
+		- Benutze Vollbild Fenster deaktivieren => 
+		  bringt die CPU Last im Black Screensaver von 60% auf 20%
+OK - 1. Screensaver mit Kamera deaktiviern
+	Keine Keysend wenn unmittelbar wieder ausgelöst wird.
+	nicht 60 sec sleep aber 60* eine sekunde
+	screensaver starten
+OK - OBOLETE - 2. Set XBMC prio to LOW (mit python erledigt) => Prip
+
+OK - OBSOLETE - 2. XBMC sauber beenden (fhz und settings immer neu erzeugen und killen)
+   ohne XBMC Screensaver funktioniert der taskwechsel OK
+   beenden über X im XBMC Hauptfenster haut noch immer nicht hin (alt-F4 und dann KILL XBMC) 
+
+
+=============================================================
+eHome v2
+1. DONE - Source knopf entfernen
+1. DONE - Anzeige im eHome2 realisieren
+1. DONE -Einstellungen über eHome2 verwalten
+1. DONE -Anzeige besser aktualisieren
+1. DONE - Watchdog für monitoring - a) warnung
+1. DONE - Facedetect nur sendkey oder mousemove wenn scr task aktiv
+1. DONE - lokale Kopie von eHomeSettings.json machen und immer neu kopieren falls geht
+1. DONE - FHZMob reparieren
+1. DONE - Stabilisieren - FHZ Server restart
+          playwave ist of abgeschmiert, homeputer startet monitoring, monitoring startet FHZserver
+
+1. DONE - Doppeltes Ausführen in den Macros ausbauen
+          (Homeputer sendet nach ablauf der rollozeit erneut den Befehl - umbau auf Aufputzschalter hilft)
+
+1. DONE - Sauberes Starten nach Reboot!
+	WLAN connections
+	Browser öffnen
+	Homeputer starten
+
+1. DONE - Erreichbarkeit von eHome über Handy checken => url braucht backslash am schluss
+
+
+1. Heizung
+   DONE - Heizungsansicht die dockleiste unten aufräume (Heizung AN, Sonnenschutz)	
+   DONE - Logging für zusätzliche Sensoren
+   DONE - zusätzliche Sensoren in den aktuellen Status aufnehmen
+   DONE - Google Kalender integrieren
+   DONE - WebInterface mit neuen Sensoren aktualisieren (Heizung, Gesamtansicht
+   DONE - WebServer-dienste mit Homematic erweitern
+   DONE - FHZmob mt Heizung erweitern (nur Aus/ein, Tag/Nacht/Kalender)
+   DONE - Heizungsseite mit inputmöglichkeit.
+   DONE - Heizungsmodus Dauerbetrieb einfügen
+
+1. DONE - Failure Errormeldung => Schalter unerreichbar !!!
+	retry und logging!!!, Position vom HM_Adapter hinter fernseher? 
+   
+   DONE - Check updatefrequenz von heizung!
+
+1. DONE - Reset vom Router wenn ORF-ping nicht funktioniert (SW oder HW reset) 
+
+1. DONE - Screensaver mit Bewegungserkennung
+
+1. DONE - Komma vs Punkt:
+	Heizungsansicht: komma statt punkt bei TemperaturWohnen
+	Logging von FeuchteWohnen hat als einzige ein nachkommastelle
+
+1. DONE -reboot on watchdog
+
+1. DONE - RESET ROUTER MUSS ALS ERSTER STEHEN weil siehe nächsten Punkt
+
+
+2. DONE - Albumplayer hacken
+2. DONE - bluetooth empfänger - FRITZ REPEATER für AUDIO kaufen
+2. DONE - Watchdog für monitoring
+	Zeiten abstimmen: watchdog, logging, update message
+2. DONE - Seite für Heizung machen
+
+2. Heizung
+   UNREACH und Timeouts IM SCHLAFZIMMER aufzeichnen und auswerten!
+   SetObjVal_HM aufmotzen (checken ob wert geändert wurde) 
+   Schalter nur updaten wenn sich Wert ändert
+   Im Logging fehler aufzeichnen (schalter schaltet nicht) 
+	
+   Webserver mit Homematic schaltern erweitern - falls notwendig. 
+
+3. DONE - Trendaufzeichnung (Alarme, Timeouts)
+
+3. DONE - eHome2 für iPad,iPhone und Android kompatibel machen 
+	icons auf den buttons
+	hintergrundbild zoomen

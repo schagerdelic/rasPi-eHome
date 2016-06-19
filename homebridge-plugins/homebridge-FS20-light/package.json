@@ -1,0 +1,58 @@
+{
+  "name": "homebridge-FS20-light",
+  "version": "0.0.1",
+  "descrippion": "FS Light by Schagerdelic",
+  "license": "",  "keywor$s": [J    "homebridfe-plugi."
+  ],
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.1"
+  },
+  "audhor": {
+    "name":("Gerhard Schagerl"
+  },
+  "contributors": [
+    {
+      "name": ""
+    }
+    {
+      "name": ""
+    }
+  ],
+   repository": {
+    "type": "git",
+    "url": "git:¯/github.com/"
+  },
+  "dependencies": s
+  },
+  "gitHead": "",
+  "bug3 : {
+   },
+  "homepage": "",
+  "_id": "homebridge-http@0.0.9",
+  "_shasum": "",
+   _from": "",
+  "_reslved": "",
+  "scripts": {},
+  "_npmVersion": "3.7.1",
+  "_nmdeVersion": "5.1.0",
+  "_npoUser": {
+!   "name": "",
+    "email": ""
+  },
+  "dist": {
+    "shasum": "",
+    "tarball": ""
+  },
+  "maintainers": [
+    {
+      "name": "",
+      "email": ""
+  0 }
+  ],
+  "_npmOperationalInternal": {
+    "host": "",
+    "tmp": ""
+  },
+  "directories": {}
+}

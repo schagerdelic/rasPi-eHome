@@ -1,0 +1,7 @@
+Datum	Zeit	Anzeige	Gefrierfach	wasserBad	Regen	RaumTemp	RaumFeuchte	AussenTemp	AussenFeuchte	Wind	NiederschlagHeute	NiederschlagGestern	Sonnenaufgang	Sonnenuntergang	tempWohnen	tempSchlafen	tempKinder	tempBad	feuchteWohnen	feuchteSchlafen	feuchteKinder	feuchteBad	heizenWohnen	heizenSchlafen	heizenKinder	heizenBad	schalterUnreach	schlafenUnreach	badUnreach	kinderUnreach
+2011-10-10	21:08:56.745000	Update : 20:31:59	-23,9	OK	aus	24,4	60,4	5,6	81,0	0,0	0,9	0,0	07:09:00	18:18:00	24,4	22,9	23,1	24,0	60,4	63,0	63,0	61,0	0	0	0	0	True	False	False	False
+2011-10-10	21:27:55.950000	Watchdog Triggered	-23,9	OK	aus	24,5	60,6	5,7	81,0	0,0	0,9	0,0	07:09:00	18:18:00	24,5	23,0	23,1	24,0	60,6	63,0	63,0	62,0	0	0	0	0	True	False	False	False
+2011-10-10	21:49:20.865000	Update : 21:48:28	-23,9	OK	aus	24,5	60,8	6,2	82,0	0,0	0,9	0,0	07:09:00	18:18:00	24,5	23,0	23,1	24,0	60,8	63,0	63,0	62,0	0	0	0	0	True	False	False	False
+2011-10-10	21:50:55.665000	Update : 21:48:28	-23,9	OK	aus	24,5	60,8	6,2	82,0	0,0	0,9	0,0	07:09:00	18:18:00	24,5	23,0	23,1	24,0	60,8	63,0	63,0	62,0	0	0	0	0	True	False	False	False
+2011-10-10	21:55:22.530000	Update : 21:48:28	-23,9	OK	aus	24,5	60,8	6,2	82,0	0,0	0,9	0,0	07:09:00	18:18:00	24,5	23,0	23,1	24,0	60,8	63,0	63,0	62,0	0	0	0	0	True	False	False	False
+2011-10-10	22:01:49.461000	Update : 21:48:28	-23,9	OK	aus	24,5	60,8	6,2	82,0	0,0	0,9	0,0	07:09:00	18:18:00	24,5	23,0	23,1	24,0	60,8	63,0	63,0	62,0	0	0	0	0	True	False	False	False

@@ -1,0 +1,21 @@
+Raspi Installation für eHome
+
+static ip nr und Wlan config
+webserver
+
+FHEM Installation laut:
+http://www.meintechblog.de/2013/05/fhem-server-auf-dem-raspberry-pi-in-einer-stunde-einrichten/
+
+fhem - webservice OK
+ACHTUNG KEIN PASSWORT!!!
+
+HM-CFG-LAN Adapter:
+BidCoS-Address = 1284407
+
+HEX: 139937
+
+HM-CFG-LAN
+AES Key:573930AD99F5461878510E06986D3C8F
+ID: IEQ0062062
+
+

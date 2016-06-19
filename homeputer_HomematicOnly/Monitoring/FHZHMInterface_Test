@@ -1,0 +1,5 @@
+import FHZHMInterface
+
+fhz=FHZHMInterface.FHZHMInterface
+
+print fhz.GetObjVal_HM("sensor_wohnen","TMPERATURE")

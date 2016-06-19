@@ -1,0 +1,60 @@
+{
+  "name": "homebridge-FS20-shade",
+  "version": "0.0.1",
+  "description": "FS Shade by Schagerdelic",
+  "license": "",
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "author": {
+    "name": "Gerhard Schagerl"
+  },
+  "contributors": [
+    {
+      "name": ""
+    },
+    {
+      "name": ""
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "dependencies": {
+  },
+  "gitHead": "",
+  "bugs": {
+   },
+  "homepage": "",
+  "_id": "homebridge-http@0.0.9",
+  "_shasum": "",
+  "_from": "",
+  "_resolved": "",
+  "scripts": {},
+  "_npmVersion": "3.7.1",
+  "_nodeVersion": "5.1.0",
+  "_npmUser": {
+    "name": "",
+    "email": ""
+  },
+  "dist": {
+    "shasum": "",
+    "tarball": ""
+  },
+  "maintainers": [
+    {
+      "name": "",
+      "email": ""
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "",
+    "tmp": ""
+  },
+  "directories": {}
+}

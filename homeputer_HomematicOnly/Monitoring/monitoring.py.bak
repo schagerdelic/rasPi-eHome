@@ -1,0 +1,173 @@
+import os
+import sys
+import traceback
+
+import xbmcgui
+import xbmc
+import time
+import win32com.client
+import pythoncom
+import datetime
+
+import ablaufRollos
+import ablaufSonnenSchutz
+import statusCheck
+
+# Control IDs
+# 6000...Makros
+# 7000...Views
+# 8000...Rollos
+# 9000...Lichter   
+
+# Rollos: oben unten vertauscht: oben im FHZ heisst unten bei mir.
+
+    
+
+	
+        
+
+xbmc.log('MY BACKGROUND')
+base_path = os.getcwd()	
+xbmc.log (base_path)
+base_path = "C:\\XBMC911\\scripts\\homecontrol"
+__settings__ = xbmc.Settings( base_path )
+print base_path
+
+globalCnt = 0
+bStartup = False
+try:
+	xbmc.log('try argv')
+    	if (sys.argv[1] == '-startup'):
+        	bStartup = True
+       	xbmc.log(sys.argv[1])
+ 
+except:
+    	pass
+
+xbmc.log('check Startup')
+
+persistOnline = __settings__.getSetting("online")
+
+
+#if  persistOnline == 'true':
+#	xbmc.log('ONLINE')
+#	persistFhz = win32com.client.Dispatch("homeputerStudio.ObjDataCom")
+#	xbmc.log('fhzCOM created')
+#else:
+#	xbmc.log('OFFLINE')
+#	persistFhz = 0
+#pass
+
+
+ablaufRollos = reload(sys.modules['ablaufRollos'])
+autoRolloControl = ablaufRollos.AutoRollos()
+
+ablaufSonnenSchutz = reload(sys.modules['ablaufSonnenSchutz'])
+autoSonnenSchutzControl = ablaufSonnenSchutz.AutoSonnenSchutz()
+
+statusCheck = reload(sys.modules['statusCheck'])
+
+print "aktHausStatus" 
+aktHausStatus = statusCheck.HausStatus()
+statusControl = statusCheck.StatusCheck()
+print aktHausStatus.letzterRegen
+
+while 1:
+	globalCnt = globalCnt + 1
+	jetzt = datetime.datetime.now().time()
+	
+	try:
+		if  persistOnline == 'true':
+			xbmc.log('ONLINE')
+			persistFhz = win32com.client.Dispatch("homeputerStudio.ObjDataCom")
+			statusControl.initXBMC(persistFhz)
+			xbmc.log('fhzCOM created')
+		else:
+			xbmc.log('OFFLINE')
+			persistFhz = 0
+			break
+		pass
+
+	except Exception, err:
+        	print('ERROR1: %s\n' % str(err))
+        	break	
+		pass
+	
+	
+	
+	
+	# Info Screen update
+	try:
+		xbmc.log('Loop')
+		currentWindow = xbmcgui.Window( xbmcgui.getCurrentWindowId() )
+		xbmc.log (str(xbmcgui.getCurrentWindowId()))
+		
+	
+		ret = persistFhz.GetObjVal("Aussentemperatur")
+		currentWindow.setProperty("Aussentemperatur",str(ret[2]))			
+	
+		ret = persistFhz.GetObjVal("Aussenluftfeuchte")
+		currentWindow.setProperty("Aussenluftfeuchte",str(ret[2]))			
+		
+		ret = persistFhz.GetObjVal("KS300_Wind")
+		currentWindow.setProperty("Windgeschwindigkeit",str(ret[2]))			
+	
+	
+	
+		ret = persistFhz.GetObjVal("RaumTemperatur")
+		currentWindow.setProperty("TemperaturSensor2",str(ret[2]))			
+	
+		ret = persistFhz.GetObjVal("Raumluftfeuchtigkeit")
+		currentWindow.setProperty("FeuchteSensor2",str(ret[2]))			
+	
+		ret = persistFhz.GetObjVal("RegenLetzerTag")
+		currentWindow.setProperty("RegenLetzerTag",str(ret[2]))			
+	
+	
+	
+		gefrierfach = persistFhz.GetObjVal("KellerGefrierfach")
+		currentWindow.setProperty("KellerGefrierfach",str(gefrierfach[2]))			
+	
+		wasserImBad = persistFhz.GetObjVal("BadWasser")
+		currentWindow.setProperty("BadWasser",wasserImBad[2])			
+	
+		esRegnet = persistFhz.GetObjVal("Regen")
+		currentWindow.setProperty("Regen",esRegnet[2])			
+	
+	        aktHausStatus.init(gefrierfach[2],wasserImBad[2],esRegnet[2])
+		statusControl.update(jetzt, aktHausStatus)
+		
+		ret = persistFhz.GetObjVal("Anzeige")
+		currentWindow.setProperty("infoTxt",ret[2])
+		xbmc.log(ret[2])			
+
+	except Exception, err:
+        	print('ERROR2: %s\n' % str(err))	
+		pass
+		
+		
+	try:
+		# Automatische Rollos
+                __settings__ = xbmc.Settings( base_path )
+                
+		if (__settings__.getSetting("autorollos") == "true"):
+                    autoRolloControl.initXBMC(persistFhz,__settings__)
+                    autoRolloControl.update(datetime.datetime.now().time())
+			
+		# Automatischer Sonnenschutz
+		if (__settings__.getSetting("autosonnenschutz") == "true"):
+                    autoSonnenSchutzControl.initXBMC(persistFhz,__settings__)
+                    autoSonnenSchutzControl.update(jetzt)
+
+
+	
+	except Exception, err:
+        	print('ERROR3: %s\n' % str(err))	
+		pass
+
+	del persistFhz
+	xbmc.log('Sleep')
+	time.sleep(10)
+
+
+
